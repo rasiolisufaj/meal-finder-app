@@ -1,0 +1,15 @@
+Style
+background-color #2d2013;
+font family Verdana
+
+container max width possible will be 800px / set it center (margin)
+
+@media(max-width: 800px){
+
+}
+@media(max-width: 700px){
+  
+}
+@media(max-width: 500px){
+  set the input width to 100%; (of its container)
+}
