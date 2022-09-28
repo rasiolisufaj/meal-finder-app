@@ -13,3 +13,41 @@ container max width possible will be 800px / set it center (margin)
 @media(max-width: 500px){
   set the input width to 100%; (of its container)
 }
+_________________________________________________________________________
+SCRIPT
+
+// FUNCTION [SEARCH MEAL AND FETCH FROM API]
+  →it will fetch the meals, we will loop through and output that into the dom
+  →prevent default
+
+  // Clear Single Meal element
+  // Get search term (get the input)
+  // Make sure if something is typed [CHECK FOR EMPTY]
+      hint: use .trim() -> it will not get the spaces
+      if empty -> show alert
+      if not empty
+        fetch (search meal by name)
+          ..... 
+          .....
+          work with the data that is returned
+
+            a. add the h2 Search results for 'input value that you get   above'
+            b. if data is null
+                  result heading => there are no searh results. [check]
+                else
+                  map through data and 
+                  output a div.meal
+                  .meal will contain a img, find the image source at the array data
+
+                  [CHECK NOTES]
+
+      REMINDER: MAP RETURNS US AN ARRAY OF THINGS
+      IN THIS CASE WE WANT TO RETURN THE THINGS AS A STRING SO WE WILL use [[[[[[[  .join()  ]]]]]]]
+
+  // Clear Search Text
+
+{STYLE THE ELEMENTS CREATED BY JS / CHECK GRID}
+
+
+// Event Listeners
+We will add an submit event at the submit element, and it will call the searchMeal function
