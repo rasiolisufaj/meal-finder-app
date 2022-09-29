@@ -46,7 +46,6 @@ SCRIPT
 
   // Clear Search Text
 
-{STYLE THE ELEMENTS CREATED BY JS / CHECK GRID}
 
 // Event Listeners
 We will add an submit event at the submit element, and it will call the searchMeal function

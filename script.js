@@ -36,7 +36,6 @@ function searchMeal(e) {
             )
             .join("");
         }
-        // console.log(data);
       });
   } else {
     alert("Please enter a search term");
@@ -53,7 +52,21 @@ function getMealById(mealId) {
       const meal = data.meals[0];
 
       addMealToDom(meal);
-      console.log(data);
+    });
+}
+
+// Fetch Random Meal From API
+function getRandomMeal() {
+  // Clear meals and heading
+  mealsEl.innerHTML = ``;
+  resultHeadingEl.innerHTML = ``;
+
+  fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
+    .then((res) => res.json())
+    .then((data) => {
+      const meal = data.meals[0];
+
+      addMealToDom(meal);
     });
 }
 
@@ -70,7 +83,6 @@ function addMealToDom(meal) {
       break;
     }
   }
-  console.log(ingredients);
 
   // Update UI
   singleMealEl.innerHTML = `
@@ -78,8 +90,8 @@ function addMealToDom(meal) {
     <h1>${meal.strMeal}</h1>
     <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
     <div class="single-meal-info">
-      <p>${meal.strCategory}</p>
-      <p>${meal.strArea}</p>
+      ${meal.strCategory ? `<p>${meal.strCategory}` : ""}
+      ${meal.strArea ? `<p>${meal.strArea}` : ""}
     </div>
     <div class="main">
       <p>${meal.strInstructions}</p>
@@ -94,6 +106,7 @@ function addMealToDom(meal) {
 
 // Event Listeners
 formSubmitEl.addEventListener("submit", searchMeal);
+randomBtnEl.addEventListener("click", getRandomMeal);
 
 mealsEl.addEventListener("click", (e) => {
   const mealInfo = e.path.find((item) => {
@@ -108,6 +121,4 @@ mealsEl.addEventListener("click", (e) => {
     const mealId = mealInfo.getAttribute("data-mealid");
     getMealById(mealId);
   }
-
-  console.log(mealInfo);
 });
