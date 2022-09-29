@@ -41,6 +41,8 @@ function searchMeal(e) {
   } else {
     alert("Please enter a search term");
   }
+  // Clear Search Text
+  searchInputEl.value = "";
 }
 
 // Event Listeners
