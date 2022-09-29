@@ -48,6 +48,48 @@ SCRIPT
 
 {STYLE THE ELEMENTS CREATED BY JS / CHECK GRID}
 
-
 // Event Listeners
 We will add an submit event at the submit element, and it will call the searchMeal function
+------------------------------------------------------------------------
+Show Single Meal Page
+
+//FUNCTION Fetch Meal By ID 
+  it will fetch(`Lookup full meal details by id`)
+    get meal from the data array that is returned
+    meal = data. ... ..
+
+    call addMealToDom(meal)
+
+//FUNCTION Add Meal To DOM 
+  initialize an array ingredients = []
+  we have to create an array of strIngredient and strMeasure
+
+  we will iterate from 1 to =20, because thats the max nr of ingredients
+    if we have a meal with strIngredient
+      we will push to ingredients meal[strIngredient 1, 2 .. n] - meal strmeasure[1,2 .. n]
+    else
+      break the for loop
+
+  updateUI
+    → singleMealEl.innerHTML = ` ` 
+
+    for the <ul> 
+        we will map through ingredients and for each ingredient , we will output a '<li>${ingredient}</li>
+        [join]
+
+
+// Event Listeners
+We will add a click event at the mealsEl, 
+  it will get mealInfo = e.path.find() [search]
+      if item has a classlist
+        return item that contains 'meal-info'
+      else return false
+
+      if we have a mealInfo
+        get the mealID
+        call getMealById(mealID)
+
+
+
+IF WE WANT TO OUTPUT AS A STRING WHEN USING MAP, WE USE .join('');
+
